@@ -1,0 +1,33 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "navigation.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.fhict.nl/I499888/todolist.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dompurify": "^3.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "jsdom": "^22.0.0",
+    "latest": "^0.2.0",
+    "marked-gfm-heading-id": "^3.0.3",
+    "marked-mangle": "^1.0.1",
+    "method-override": "^3.0.0",
+    "mongodb": "^5.5.0",
+    "mongoose": "^7.2.0",
+    "slugify": "^1.6.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

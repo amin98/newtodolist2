@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>To Do List</title>
+</head>
+
+<body>
+    <%- include('_navigation') %>
+
+        <div class="main-container">
+            <div class="header_text">
+                <h1>Your Tasks</h1>
+                <a href="tasks/new" class="add_task_button">+ Add Task</a>
+            </div>
+            <div class="tasks-container">
+
+
+
+                <% tasks.forEach(task=>{ %>
+                    <div class="task">
+                        <a href="tasks/<%= task.slug  %>" class="task_content">
+                            <p class="task_content_paragraph">
+                                <%= task.name %>
+                            </p>
+                            <p class="priority_level_text">
+                                <%= task.duedate.toLocaleDateString('nl-NL') %>
+                            </p>
+                        </a>
+                        <form action="/tasks/<%= task.id  %>?_method=DELETE" method="post"
+                            onSubmit="return confirm('Do want to check this Task?');">
+                            <label class="container">&nbsp;
+                                <input onChange="this.form.submit()" class="checkbox" type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </form>
+                    </div>
+                    <% }) %>
+
+            </div>
+        </div>
+        <a href="tasks/new" class="bottom_button">+ Add Task</a>
+</body>
+
+</html>
+<%- include('_scripts') %>

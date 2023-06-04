@@ -1,0 +1,92 @@
+@mixin flexTopCenter($direction) {
+  display: flex;
+  justify-content: center;
+  flex-direction: $direction;
+}
+
+@mixin flexCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexColumnCenter($direction) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+}
+
+@mixin flexColumnTopCenter($direction) {
+  display: flex;
+  justify-content: center;
+  flex-direction: $direction;
+}
+
+@mixin flexCenterBetween() {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin primaryButton() {
+  .primary_button {
+    border: none;
+    background: $darkBlue;
+    color: $white;
+    font-size: 1.2rem;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+    box-sizing: border-box;
+    max-width: 500px;
+
+    &:hover {
+      background: $hoverDarkBlue;
+      cursor: pointer;
+    }
+    &:focus {
+      background-color: $focusDarkBlue;
+    }
+  }
+}
+
+@mixin editButton() {
+  .edit_button {
+    border: none;
+    background: $edit;
+    color: $white;
+    font-size: 1.2rem;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+    &:hover {
+      background: $hoverEdit;
+      cursor: pointer;
+    }
+    &:focus {
+      background-color: $focusEdit;
+    }
+  }
+}
+@mixin deleteButton() {
+  .delete_button {
+    border: none;
+    background: $delete;
+    color: $white;
+    font-size: 1.2rem;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+    &:hover {
+      background: $hoverDelete;
+      cursor: pointer;
+    }
+    &:focus {
+      background-color: $focusDelete;
+    }
+  }
+}

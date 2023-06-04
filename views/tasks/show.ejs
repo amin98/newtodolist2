@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" type="text/css" href="/styles/style.css" />
+    <title>To Do List</title>
+</head>
+
+<body>
+    <%- include('_navigation') %>
+
+    <div class="taskdetails-container">
+        <div class="taskdetails_content">
+            <h1>
+                <%= task.name %>
+            </h1>
+            <hr>
+            <div class="taskdetails_description">
+                <h2>Descsription</h2>
+                <p>
+                    <%= task.description %>
+                </p>
+            </div>
+            <h3>Priority: <span>
+                    <%= task.priority %>
+                </span></h3>
+            <h3>Deadline Date: <span>
+                    <%= task.duedate.toLocaleDateString('nl-NL') %>
+                </span> </h3>
+            <div class="taskdetails_buttons">
+                <a href="/tasks/edit/<%= task.id %>" class="edit_button">Edit</a>
+
+                <form action="/tasks/<%= task.id  %>?_method=DELETE" method="post">
+                    <button type="submit" class="delete_button">
+                        Delete
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>
+<%- include('_scripts') %>

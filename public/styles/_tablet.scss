@@ -1,0 +1,149 @@
+@media only screen and (width >= 450px) and (width < 900px) {
+  .bottom_button {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    background-color: $darkBlue;
+    height: 70px;
+    display: none; // Enables flexbox
+    justify-content: center; // Center on main axis
+    align-items: center;
+    width: 100%;
+    color: $white;
+    text-decoration: none;
+    font-size: 2rem;
+    &:hover {
+      background-color: $hoverDarkBlue;
+    }
+  }
+  .header_text {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-inline: 15px;
+    .add_task_button {
+      border: none;
+      background: $darkBlue;
+      color: $white;
+      font-size: 1.2rem;
+      padding: 5px 5px 5px 5px;
+      border-radius: 5px;
+      text-decoration: none;
+      box-sizing: border-box;
+      &:hover {
+        background: $hoverDarkBlue;
+        cursor: pointer;
+      }
+      &:focus {
+        background-color: $focusDarkBlue;
+      }
+    }
+  }
+  .tasks-container {
+    @include flexColumnTopCenter(column);
+    margin-inline: 15px;
+    margin-bottom: 25px;
+    gap: 25px;
+
+    .task {
+      box-sizing: border-box;
+      border-radius: 5px;
+      background-color: $white;
+      box-shadow: rgba(126, 130, 135, 0.2) 1px 5px 5px;
+      @include flexCenterBetween();
+      padding: 10px;
+      .priority_level_text {
+        display: flex;
+        gap: 20px;
+      }
+      .container {
+        display: block;
+        position: relative;
+        // padding-left: 35px;
+        cursor: pointer;
+        font-size: 16px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      /* Hide the browser's default checkbox */
+      .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+
+      /* Create a custom checkbox */
+      .checkmark {
+        position: absolute;
+        top: -3px;
+        left: -20px;
+        height: 25px;
+        width: 25px;
+
+        border-radius: 100%;
+        background-color: #eee;
+        border: 1px solid rgba(95, 95, 95, 0.148);
+      }
+
+      /* On mouse-over, add a grey background color */
+      .container:hover input ~ .checkmark {
+        background-color: #ccc;
+      }
+
+      /* When the checkbox is checked, add a blue background */
+      // .container input:checked ~ .checkmark {
+      //   // background-color: #2196f3;
+      // }
+
+      /* Create the checkmark/indicator (hidden when not checked) */
+      .checkmark:after {
+        content: '';
+        position: absolute;
+        display: none;
+      }
+
+      /* Show the checkmark when checked */
+      .container input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      /* Style the checkmark/indicator */
+      .container .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid #66bb6a;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
+    .task_content {
+      list-style: none;
+      text-decoration: none;
+      font-size: 18px;
+      color: $black;
+      margin: 0;
+
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+      p {
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        line-clamp: 1;
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
+}

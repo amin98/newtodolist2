@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" type="text/css" href="/styles/style.css" />
+    <title>To Do List</title>
+</head>
+
+<body>
+    <%- include('_navigation') %>
+
+        <div class="newtask-container">
+            <h1>Edit Task</h1>
+            <hr>
+            <form action="/tasks/<%= task.id  %>?_method=PUT" method="post" class="newtask_form_container">
+                <%- include('_form_fields') %>
+
+            </form>
+        </div>
+</body>
+
+
+</html>
+<%- include('_scripts') %>
